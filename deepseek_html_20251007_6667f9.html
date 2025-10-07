@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umbrella Corporation - Liderança Global em Biotecnologia</title>
+    <style>
+        :root {
+            --primary: #c62828;
+            --primary-dark: #8e0000;
+            --primary-light: #ff5f52;
+            --secondary: #2e7d32;
+            --dark: #0a0a0a;
+            --darker: #050505;
+            --light: #f5f5f5;
+            --gray: #424242;
+            --accent: #7e57c2;
+            --gold: #ffd700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(198, 40, 40, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(126, 87, 194, 0.1) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(20, 20, 20, 0.95) 100%);
+            border-bottom: 3px solid var(--primary);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 28px;
+            color: var(--light);
+            box-shadow: 0 0 15px rgba(198, 40, 40, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .logo-icon::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 30%, rgba(255, 255, 255, 0.1) 100%);
+        }
+        
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--light);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .logo-subtitle {
+            font-size: 12px;
+            color: var(--primary-light);
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 8px 15px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-links a::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+        
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+        
+        .nav-links .secret {
+            background-color: var(--primary);
+            color: var(--light);
+            box-shadow: 0 0 10px rgba(198, 40, 40, 0.5);
+        }
+        
+        .nav-links .secret:hover {
+            background-color: var(--primary-dark);
+            box-shadow: 0 0 15px rgba(198, 40, 40, 0.7);
+        }
+        
+        /* Hidden Secret Button */
+        .secret-access {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 0 20px rgba(198, 40, 40, 0.7);
+            transition: all 0.3s;
+            opacity: 0.3;
+        }
+        
+        .secret-access:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(198, 40, 40, 0.9);
+        }
+        
+        .secret-access span {
+            color: var(--light);
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: 
+                linear-gradient(rgba(5, 5, 5, 0.8), rgba(10, 10, 10, 0.9)),
+                url('https://images.unsplash.com/photo-1582719471384-894fbb16e074?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, rgba(198, 40, 40, 0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(126, 87, 194, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: var(--light);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #e0e0e0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--light);
+            padding: 15px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(198, 40, 40, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(198, 40, 40, 0.6);
+        }
+        
+        .btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Global Presence Section */
+        .global {
+            padding: 100px 0;
+            background-color: var(--darker);
+            position: relative;
+        }
+        
+        .global::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(198, 40, 40, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(126, 87, 194, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 42px;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+        
+        .global-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(50, 50, 50, 0.4) 100%);
+            padding: 40px 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(198, 40, 40, 0.5);
+        }
+        
+        .stat-text {
+            font-size: 18px;
+            color: #b0b0b0;
+        }
+        
+        /* Cloning Section */
+        .cloning {
+            padding: 100px 0;
+            background-color: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cloning::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(198, 40, 40, 0.1) 0%, rgba(126, 87, 194, 0.1) 100%);
+            pointer-events: none;
+        }
+        
+        .cloning-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .cloning-text {
+            flex: 1;
+        }
+        
+        .cloning-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: var(--light);
+        }
+        
+        .cloning-text p {
+            margin-bottom: 20px;
+            color: #b0b0b0;
+            font-size: 18px;
+        }
+        
+        .cloning-visual {
+            flex: 1;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(198, 40, 40, 0.2) 0%, rgba(126, 87, 194, 0.2) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dna-strand {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(198, 40, 40, 0.4) 20px,
+                    rgba(198, 40, 40, 0.4) 22px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(126, 87, 194, 0.4) 20px,
+                    rgba(126, 87, 194, 0.4) 22px
+                );
+            animation: dnaMove 20s linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes dnaMove {
+            0% {
+                transform: translate(-20px, -20px);
+            }
+            100% {
+                transform: translate(20px, 20px);
+            }
+        }
+        
+        .cloning-title {
+            position: relative;
+            z-index: 2;
+            font-size: 28px;
+            color: var(--light);
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            background: rgba(10, 10, 10, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .warning {
+            color: var(--primary);
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid var(--primary);
+            border-radius: 4px;
+            background-color: rgba(198, 40, 40, 0.1);
+            text-align: center;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 100px 0;
+            background-color: var(--darker);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(50, 50, 50, 0.4) 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .product-image::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(transparent, rgba(10, 10, 10, 0.9));
+        }
+        
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .product-description {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #050505;
+            padding: 70px 0 20px;
+            border-top: 1px solid var(--gray);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-links a::before {
+            content: "▶";
+            margin-right: 8px;
+            font-size: 10px;
+            color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--gray);
+            color: #757575;
+            font-size: 14px;
+        }
+        
+        /* Secret Area */
+        .secret-area {
+            display: none;
+            padding: 50px 0;
+            text-align: center;
+            background-color: #050505;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        .secret-area::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(198, 40, 40, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(126, 87, 194, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .secret-area h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(198, 40, 40, 0.5);
+        }
+        
+        .secret-area p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #b0b0b0;
+            font-size: 18px;
+        }
+        
+        .secret-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .secret-card {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.9) 0%, rgba(50, 50, 50, 0.5) 100%);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+        
+        .secret-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .secret-card p {
+            margin-bottom: 10px;
+            color: #b0b0b0;
+        }
+        
+        /* Login Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(50, 50, 50, 0.9) 100%);
+            padding: 50px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .modal h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--light);
+            font-size: 28px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            color: #b0b0b0;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            color: var(--light);
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(198, 40, 40, 0.3);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #b0b0b0;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .cloning-content {
+                flex-direction: column;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">U</div>
+                    <div>
+                        <div class="logo-text">UMBRELLA CORPORATION</div>
+                        <div class="logo-subtitle">BIOTECHNOLOGY GLOBAL LEADER</div>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#global">Presença Global</a></li>
+                    <li><a href="#cloning">Clonagem Gen-BL</a></li>
+                    <li><a href="#products">Inovações</a></li>
+                    <li><a href="#" id="login-link">Acesso Restrito</a></li>
+                    <li><a href="#" class="secret" id="secret-link">Nível 5</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hidden Secret Button -->
+    <div class="secret-access" id="hidden-secret">
+        <span>U</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>LIDERANÇA GLOBAL EM BIOTECNOLOGIA</h1>
+                <p>A Umbrella Corporation redefine os limites da ciência, medicina e engenharia genética. Com presença em 156 países, somos a empresa mais poderosa do mundo em pesquisa farmacêutica e biotecnologia avançada.</p>
+                <a href="#global" class="btn">Explore Nossa Dominação Global</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Presence Section -->
+    <section class="global" id="global">
+        <div class="container">
+            <h2 class="section-title">DOMÍNIO GLOBAL</h2>
+            <div class="global-stats">
+                <div class="stat-card">
+                    <div class="stat-number">156</div>
+                    <div class="stat-text">Países com Operações</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">47</div>
+                    <div class="stat-text">Laboratórios de Pesquisa</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12M+</div>
+                    <div class="stat-text">Funcionários Globais</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$3.2T</div>
+                    <div class="stat-text">Faturamento Anual</div>
+                </div>
+            </div>
+            <div class="warning">
+                AVISO: Todas as instalações da Umbrella Corporation operam sob protocolos de segurança máxima.
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloning Section -->
+    <section class="cloning" id="cloning">
+        <div class="container">
+            <h2 class="section-title">DIVISÃO DE CLONAGEM GEN-BL</h2>
+            <div class="cloning-content">
+                <div class="cloning-text">
+                    <h3>Tecnologia de Clonagem de Próxima Geração</h3>
+                    <p>Nossa Divisão Gen-BL representa o ápice da engenharia genética mundial. Desenvolvemos técnicas revolucionárias de clonagem que redefinem os limites do possível.</p>
+                    <p>Com 12 instalações de segurança máxima espalhadas pelo globo, garantimos resultados precisos em todos os nossos projetos de clonagem avançada.</p>
+                    <p>O programa Gen-BL já produziu mais de 5.000 clones funcionais com aplicações em medicina regenerativa, substituição de órgãos e aprimoramento humano.</p>
+                    <div class="warning">
+                        ATENÇÃO: Acesso à Divisão Gen-BL é restrito a pessoal de segurança nível 4 ou superior.
+                    </div>
+                </div>
+                <div class="cloning-visual">
+                    <div class="dna-strand"></div>
+                    <div class="cloning-title">SISTEMA DE CLONAGEM GEN-BL<br><span style="font-size: 16px;">PROTOCOLO DE SEGURANÇA MÁXIMA</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">INOVAÇÕES EXCLUSIVAS</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image" style="background-color: #1a1a1a;"></div>
+                    <div class="product-content">
+                        <h3 class="product-title">Serum T-Vírus</h3>
+                        <p class="product-description">Modificação genética avançada para regeneração celular e aumento da capacidade física. Resultados extraordinários em testes preliminares com taxas de sucesso de 94%.</p>
+                        <a href="#" class="btn">Detalhes Classificados</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-color: #1a1a1a;"></div>
+                    <div class="product-content">
+                        <h3 class="product-title">Projeto G</h3>
+                        <p class="product-description">Tecnologia de clonagem terapêutica para reposição de órgãos e tecidos especializados. Solução definitiva para doenças degenerativas com compatibilidade de 99.7%.</p>
+                        <a href="#" class="btn">Detalhes Classificados</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-color: #1a1a1a;"></div>
+                    <div class="product-content">
+                        <h3 class="product-title">Programa Nemesis</h3>
+                        <p class="product-description">Aprimoramento cognitivo através de modificações neurais controladas. Potencial ilimitado para o desenvolvimento humano com aumento de 240% na capacidade intelectual.</p>
+                        <a href="#" class="btn">Detalhes Classificados</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Umbrella Corporation</h3>
+                    <p style="color: #b0b0b0; margin-top: 20px;">Liderando a revolução farmacêutica através da inovação genética e biotecnologia avançada. Presente em 156 países e territórios.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Divisões</h3>
+                    <ul class="footer-links">
+                        <li><a href="#cloning">Clonagem Gen-BL</a></li>
+                        <li><a href="#products">Pesquisa Farmacêutica</a></li>
+                        <li><a href="#">Biotecnologia Avançada</a></li>
+                        <li><a href="#">Segurança Corporativa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Recursos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" id="footer-login">Acesso Restrito</a></li>
+                        <li><a href="#" id="footer-terms">Termos de Uso</a></li>
+                        <li><a href="#" id="footer-privacy">Política de Segurança</a></li>
+                        <li><a href="#" id="footer-secret">Acesso Nível 5</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Umbrella Corporation. Todos os direitos reservados. Informação classificada - divulgação não autorizada é punível por lei internacional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-login">&times;</span>
+            <h2>ACESSO RESTRITO</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Identificação de Segurança</label>
+                    <input type="text" id="username" required placeholder="Digite sua ID de segurança">
+                </div>
+                <div class="form-group">
+                    <label for="password">Código de Acesso</label>
+                    <input type="password" id="password" required placeholder="Digite seu código de acesso">
+                </div>
+                <div class="form-group">
+                    <label for="clearance">Nível de Autorização</label>
+                    <input type="text" id="clearance" required placeholder="Nível de autorização (1-5)">
+                </div>
+                <button type="submit" class="btn">Verificar Credenciais</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Secret Area -->
+    <section class="secret-area" id="secret-section">
+        <div class="container">
+            <h2>ÁREA DE SEGURANÇA MÁXIMA - NÍVEL 5</h2>
+            <p>Esta área é restrita a funcionários de nível de segurança 5. Acesso mediante autenticação biométrica e autorização do Conselho Diretor.</p>
+            
+            <div class="warning">
+                ATENÇÃO: O conteúdo abaixo é classificado como CONFIDENCIAL - NÍVEL 5. Divulgação não autorizada é punível por lei internacional.
+            </div>
+            
+            <div class="secret-grid">
+                <div class="secret-card">
+                    <h3>Projeto T-Vírus</h3>
+                    <p>Status: <span style="color: var(--primary);">Fase de testes avançada</span></p>
+                    <p>Objetivo: Aprimoramento físico e regeneração celular acelerada</p>
+                    <p>Resultados: Sujeitos demonstram aumento de 300% na capacidade física</p>
+                    <p>Efeitos colaterais: Instabilidade comportamental em 12% dos casos</p>
+                    <p>Localização: Instalação Alpha, Setor 7</p>
+                </div>
+                <div class="secret-card">
+                    <h3>Programa Nemesis</h3>
+                    <p>Status: <span style="color: var(--primary);">Ativo</span></p>
+                    <p>Objetivo: Criação de organismos de combate geneticamente modificados</p>
+                    <p>Resultados: Produção bem-sucedida de 247 unidades de elite</p>
+                    <p>Notas: Controle mental requer ajustes finos - Incidente 047 relatado</p>
+                    <p>Localização: Complexo Epsilon, Antártica</p>
+                </div>
+                <div class="secret-card">
+                    <h3>Gen-BL: Projeto de Clonagem</h3>
+                    <p>Status: <span style="color: var(--primary);">Operacional</span></p>
+                    <p>Objetivo: Clonagem em massa para substituição de alvos específicos</p>
+                    <p>Resultados: 5,128 clones funcionais com 98% de compatibilidade genética</p>
+                    <p>Problemas: Instabilidade em clones de longa duração (7% de falha)</p>
+                    <p>Localização: 12 instalações globais</p>
+                </div>
+                <div class="secret-card">
+                    <h3>Projeto Wesker</h3>
+                    <p>Status: <span style="color: var(--primary);">Concluído</span></p>
+                    <p>Objetivo: Aprimoramento genético de agentes de elite</p>
+                    <p>Resultados: 12 agentes com capacidades físicas e cognitivas sobre-humanas</p>
+                    <p>Notas: Programa expandido para Fase 2 - 24 novos candidatos</p>
+                    <p>Localização: Instalação Delta, Localização classificada</p>
+                </div>
+            </div>
+            
+            <div class="warning">
+                ALERTA DE SEGURANÇA: Incidente de contenção relatado no Setor 7. Evacuação em andamento. Todos os agentes de nível 5 reportem ao centro de comando.
+            </div>
+            
+            <a href="#" class="btn" id="back-to-main">Voltar ao Site Principal</a>
+        </div>
+    </section>
+
+    <script>
+        // Modal functionality
+        const loginModal = document.getElementById('login-modal');
+        const loginLink = document.getElementById('login-link');
+        const footerLogin = document.getElementById('footer-login');
+        const closeLogin = document.getElementById('close-login');
+        const secretLink = document.getElementById('secret-link');
+        const footerSecret = document.getElementById('footer-secret');
+        const secretSection = document.getElementById('secret-section');
+        const backToMain = document.getElementById('back-to-main');
+        const loginForm = document.getElementById('login-form');
+        const hiddenSecret = document.getElementById('hidden-secret');
+
+        // Open login modal
+        loginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginModal.style.display = 'flex';
+        });
+
+        footerLogin.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginModal.style.display = 'flex';
+        });
+
+        // Secret area access via hidden button
+        hiddenSecret.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelector('body').style.overflow = 'hidden';
+            secretSection.style.display = 'block';
+            window.scrollTo(0, 0);
+        });
+
+        // Secret area access via nav link
+        secretLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const username = prompt("Identificação de Segurança:");
+            const password = prompt("Código de Acesso:");
+            const clearance = prompt("Nível de Autorização:");
+            
+            if (username === "darkray00" && password === "123456" && clearance === "5") {
+                document.querySelector('body').style.overflow = 'hidden';
+                secretSection.style.display = 'block';
+                window.scrollTo(0, 0);
+            } else {
+                alert('Acesso negado. Credenciais insuficientes para esta área.');
+            }
+        });
+
+        footerSecret.addEventListener('click', (e) => {
+            e.preventDefault();
+            const username = prompt("Identificação de Segurança:");
+            const password = prompt("Código de Acesso:");
+            const clearance = prompt("Nível de Autorização:");
+            
+            if (username === "darkray00" && password === "123456" && clearance === "5") {
+                document.querySelector('body').style.overflow = 'hidden';
+                secretSection.style.display = 'block';
+                window.scrollTo(0, 0);
+            } else {
+                alert('Acesso negado. Credenciais insuficientes para esta área.');
+            }
+        });
+
+        // Back to main site
+        backToMain.addEventListener('click', (e) => {
+            e.preventDefault();
+            secretSection.style.display = 'none';
+            document.querySelector('body').style.overflow = 'auto';
+        });
+
+        // Login form submission
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const clearance = document.getElementById('clearance').value;
+            
+            if (username === "darkray00" && password === "123456" && clearance === "5") {
+                alert('Acesso permitido. Bem-vindo à Área Secreta, darkray00.');
+                loginModal.style.display = 'none';
+                document.querySelector('body').style.overflow = 'hidden';
+                secretSection.style.display = 'block';
+                window.scrollTo(0, 0);
+            } else {
+                alert('Acesso negado. Credenciais insuficientes para esta área.');
+                loginModal.style.display = 'none';
+            }
+        });
+
+        // Close modals
+        closeLogin.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.style.display = 'none';
+            }
+        });
+
+        // Easter egg - console message
+        console.log("%cATENÇÃO: Esta é uma área restrita da Umbrella Corporation.", "color: #c62828; font-size: 18px; font-weight: bold;");
+        console.log("%cAcesso não autorizado a este sistema é monitorado e punível por lei internacional.", "color: #c62828; font-size: 14px;");
+        console.log("%cRelatório de Segurança: Todos os sistemas operacionais. Projetos Gen-BL em andamento.", "color: #2e7d32; font-size: 12px;");
+        console.log("%cCredenciais de teste: darkray00 / 123456 / Nível 5", "color: #ffd700; font-size: 12px;");
+    </script>
+</body>
+</html>
