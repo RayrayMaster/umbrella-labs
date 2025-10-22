@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Termos de Uso e Privacidade - Umbrella</title>
+	<style>
+		/* Versão mínima das variáveis e estilos do cabeçalho (mesmas variáveis do index) */
+		:root{
+			--bg: #eaf6ff;
+			--header-bg-start: #b3e5fc;
+			--header-bg-end: #81d4fa;
+			--text: #012a4a;
+			--border: rgba(0,0,0,0.15);
+			--link-hover: rgba(1,42,74,0.08);
+			--focus-ring: rgba(129,212,250,0.25);
+			--muted: rgba(1,42,74,0.6);
+		}
+		:root[data-theme="dark"]{
+			--bg: #0f1720;
+			--header-bg-start: #06202a;
+			--header-bg-end: #063044;
+			--text: #e6f7ff;
+			--border: rgba(255,255,255,0.06);
+			--link-hover: rgba(255,255,255,0.03);
+			--focus-ring: rgba(14,165,233,0.16);
+			--muted: rgba(230,247,255,0.6);
+		}
+
+		/* base tipográfica */
+		html { background: var(--bg); color: var(--text); transition: background .25s ease, color .25s ease; }
+		body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; font-size: 16px; margin: 0; }
+
+		.cabeçalho {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			padding: 8px 20px;
+			gap: 12px;
+			background: linear-gradient(90deg, var(--header-bg-start) 0%, var(--header-bg-end) 100%);
+			border-bottom: 2px solid var(--border);
+			box-sizing: border-box;
+			flex-wrap: wrap;
+			min-height: 64px;
+		}
+		.logo {
+			font-weight: 700;
+			font-size: 1.15rem;
+			color: var(--text);
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		/* novo wrapper para alinhar nav + botão */
+		.controls {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			margin-left: auto;
+		}
+
+		nav {
+			display: flex;
+			gap: 12px;
+			align-items: center;
+		}
+
+		nav a {
+			color: var(--text);
+			text-decoration: none;
+			padding: 8px 10px;
+			border-radius: 6px;
+			font-size: 0.95rem;
+		}
+
+		nav a:hover,
+		nav a:focus {
+			background: var(--link-hover);
+			outline: none;
+			box-shadow: 0 0 0 3px var(--focus-ring);
+		}
+
+		/* usar variáveis para borda do botão e transições suaves */
+		.theme-toggle {
+			background: transparent;
+			border: 1px solid var(--border);
+			padding: 6px 10px;
+			border-radius: 8px;
+			cursor: pointer;
+			color: var(--text);
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			font-size: 0.95rem;
+			transition: background .15s ease, box-shadow .15s ease, color .15s ease;
+		}
+		.theme-toggle:focus { box-shadow: 0 0 0 3px var(--focus-ring); outline: none; }
+
+		@media (max-width: 600px) {
+			.cabeçalho {
+				padding: 12px;
+				min-height: auto;
+				align-items: flex-start;
+			}
+			.controls {
+				width: 100%;
+				justify-content: space-between;
+			}
+			nav {
+				order: 1;
+				width: 100%;
+				justify-content: flex-start;
+				gap: 10px;
+				padding-top: 8px;
+			}
+		}
+
+		/* melhorias de tipografia para os termos */
+		main { padding: 28px 20px; max-width: 900px; margin: 24px auto; line-height: 1.6; }
+		.card {
+			background: color-mix(in srgb, var(--bg) 80%, white);
+			/* fallback simple */
+			background-color: rgba(255,255,255,0.9);
+			border: 1px solid rgba(0,0,0,0.04);
+			border-radius: 12px;
+			box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+			padding: 28px;
+		}
+		:root[data-theme="dark"] .card {
+			background-color: rgba(255,255,255,0.03);
+			border: 1px solid rgba(255,255,255,0.03);
+			box-shadow: none;
+		}
+
+		h1 { margin-top: 0; font-size: 1.5rem; }
+		h2 { margin-top: 1.25rem; font-size: 1.125rem; }
+		.section { margin-bottom: 1rem; }
+		small.meta { display:block; color: var(--muted); margin-bottom: 12px; }
+
+		/* Sumário (TOC) */
+		.toc {
+			margin-bottom: 18px;
+			padding: 12px;
+			border-left: 3px solid var(--header-bg-start);
+			background: transparent;
+			border-radius: 8px;
+		}
+		.toc h3 { margin: 0 0 8px 0; font-size: 0.95rem; }
+		.toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 6px; }
+		.toc a { color: var(--text); text-decoration: none; opacity: 0.95; font-size: 0.95rem; }
+		.toc a:hover { text-decoration: underline; opacity: 1; }
+
+		/* listas e links dentro do conteúdo */
+		main ul { padding-left: 1.15rem; }
+		a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; }
+		a:hover { color: var(--text); }
+
+		/* pequenas melhorias responsivas */
+		@media (max-width:600px){
+			.card { padding: 18px; }
+			.toc ul { gap: 8px; }
+		}
+	</style>
+</head>
+<body>
+	<header class="cabeçalho" role="banner">
+		<a class="logo" href="index.html" aria-label="Home - Umbrella">Umbrella</a>
+
+		<!-- agrupamento para melhor alinhamento e responsividade -->
+		<div class="controls">
+			<nav role="navigation" aria-label="Menu principal">
+				<a href="index.html">Início</a>
+				<a href="#" aria-current="page">Termos</a>
+			</nav>
+
+			<button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Alternar tema">
+				<span id="themeIcon">🌙</span>
+				<span id="themeLabel">Escuro</span>
+			</button>
+		</div>
+	</header>
+
+	<main>
+		<article class="card">
+			<h1>Termos de Uso e Política de Privacidade</h1>
+			<small class="meta">Última atualização: 2025-10-04</small>
+
+			<!-- Sumário -->
+			<nav class="toc" aria-label="Sumário dos termos">
+				<h3>Sumário</h3>
+				<ul>
+					<li><a href="#introducao">1. Introdução</a></li>
+					<li><a href="#uso">2. Uso do site</a></li>
+					<li><a href="#conteudo-usuario">3. Conteúdo do usuário</a></li>
+					<li><a href="#ip">4. Propriedade intelectual</a></li>
+					<li><a href="#responsabilidade">5. Limitação de responsabilidade</a></li>
+					<li><a href="#privacidade">6. Privacidade e dados pessoais</a></li>
+					<li><a href="#cookies">7. Cookies</a></li>
+					<li><a href="#compartilhamento">8. Compartilhamento</a></li>
+					<li><a href="#direitos">9. Direitos do usuário</a></li>
+					<li><a href="#alteracoes">10. Alterações</a></li>
+					<li><a href="#contato">11. Contato</a></li>
+				</ul>
+			</nav>
+
+			<section id="introducao" class="section">
+				<h2>1. Introdução</h2>
+				<p>Bem-vindo ao site Umbrella. Ao acessar ou utilizar este site, você concorda com estes Termos de Uso e com a nossa Política de Privacidade. Se não concordar, por favor não use o site.</p>
+			</section>
+
+			<section id="uso" class="section">
+				<h2>2. Uso do site</h2>
+				<p>O site é fornecido para fins informativos. Use-o de forma legal e ética, sem prejudicar o serviço ou terceiros.</p>
+			</section>
+
+			<section id="conteudo-usuario" class="section">
+				<h2>3. Conteúdo do usuário</h2>
+				<p>Se você enviar conteúdo (comentários, formulários), concede-nos licença não exclusiva para usar esse conteúdo para operar o serviço. Não publique conteúdo ilegal ou que viole terceiros.</p>
+			</section>
+
+			<section id="ip" class="section">
+				<h2>4. Propriedade intelectual</h2>
+				<p>O conteúdo original do site (textos, imagens, layout) é protegido por direitos autorais. Uso pessoal é permitido; qualquer outro uso requer autorização.</p>
+			</section>
+
+			<section id="responsabilidade" class="section">
+				<h2>5. Limitação de responsabilidade</h2>
+				<p>O site é fornecido "no estado em que se encontra". Na máxima extensão permitida por lei, não nos responsabilizamos por perdas decorrentes do uso do site.</p>
+			</section>
+
+			<section id="privacidade" class="section">
+				<h2>6. Privacidade e dados pessoais</h2>
+				<p>Coletamos informações mínimas para melhorar sua experiência. Dados podem incluir nome, e-mail e dados técnicos (como IP). Usamos esses dados para fornecer, responder e melhorar o serviço.</p>
+			</section>
+
+			<section id="cookies" class="section">
+				<h2>7. Cookies e tecnologias semelhantes</h2>
+				<p>Usamos cookies para lembrar preferências (ex.: tema), melhorar a navegação e coletar estatísticas. Você pode gerenciar cookies no navegador; isso pode afetar funcionalidades.</p>
+			</section>
+
+			<section id="compartilhamento" class="section">
+				<h2>8. Compartilhamento com terceiros</h2>
+				<p>Podemos compartilhar dados agregados e anonimizados para análises. Não vendemos informações pessoais identificáveis.</p>
+			</section>
+
+			<section id="direitos" class="section">
+				<h2>9. Direitos do usuário</h2>
+				<p>Você pode solicitar acesso, correção ou exclusão de seus dados pessoais. Entre em contato conforme a seção "Contato" abaixo.</p>
+			</section>
+
+			<section id="alteracoes" class="section">
+				<h2>10. Alterações destes termos</h2>
+				<p>Podemos atualizar estes Termos periodicamente. Publicaremos a data da última atualização nesta página.</p>
+			</section>
+
+			<section id="contato" class="section">
+				<h2>11. Contato</h2>
+				<p>Para dúvidas ou solicitações sobre estes Termos ou privacidade, envie e-mail para: <a href="mailto:contato@umbrella.exemplo">contato@umbrella.exemplo</a>.</p>
+			</section>
+
+			<footer class="section" aria-hidden="true">
+				<small>Versão resumida; substitua por redação jurídica definitiva se necessário.</small>
+			</footer>
+		</article>
+	</main>
+
+	<script src="theme.js"></script>
+</body>
+</html>
