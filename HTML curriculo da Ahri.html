@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo de Ahri T'sai - Classificado</title>
+    <style>
+        :root {
+            --primary-color: #8a2be2;
+            --secondary-color: #ff69b4;
+            --accent-color: #9370db;
+            --dark-bg: #1a1a2e;
+            --card-bg: #2d2b55;
+            --text-color: #e6e6fa;
+            --border-glow: 0 0 10px rgba(138, 43, 226, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(138, 43, 226, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 105, 180, 0.1) 0%, transparent 20%);
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--border-glow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--accent-color);
+            position: relative;
+        }
+        
+        .header h1 {
+            color: var(--secondary-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+        }
+        
+        .classified-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+        }
+        
+        .codename {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(45, 43, 85, 0.7);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .section-title {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .section-content {
+            padding-left: 10px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .skill-item {
+            background: rgba(138, 43, 226, 0.2);
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .warning-box {
+            background: rgba(255, 69, 0, 0.2);
+            border: 1px solid rgba(255, 69, 0, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .warning-box::before {
+            content: "⚠️";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .warning-content {
+            margin-left: 30px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--accent-color);
+            font-size: 0.9rem;
+            color: rgba(230, 230, 250, 0.7);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="classified-badge">DOCUMENTO CLASSIFICADO - ACESSO RESTRITO</div>
+            <h1>Ahri T'sai</h1>
+            <div class="codename">
+                <span>🦊 Codinome: "Fênix"</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">📋 Informações Pessoais</h2>
+            <div class="section-content">
+                <p><strong>Nome completo:</strong> Ahri T'sai</p>
+                <p><strong>Codinome:</strong> "Fênix" 🔥</p>
+                <p><strong>Nacionalidade:</strong> Ioniana (identidade múltipla — registros selados) 🗂️</p>
+                <p><strong>Endereço:</strong> Residência Temporária — Setor 7, Distrito de Navori, Ionia 🏠</p>
+                <p><strong>Telefone:</strong> +44 7000 914-009 (canal criptografado) 📞</p>
+                <p><strong>E-mail:</strong> ahri.tsai@veilnet.ops 📧</p>
+                <p><strong>Estado civil:</strong> Não divulgado ❓</p>
+                <p><strong>Disponibilidade:</strong> Imediata para operações confidenciais ⚡</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🎯 Objetivo Profissional</h2>
+            <div class="section-content">
+                <p>Atuar como espiã de infiltração e manipulação psíquica, com foco em inteligência emocional, coleta de dados sensíveis e neutralização comportamental. Busca integrar unidades de operações táticas de elite, utilizando hipnose e influência empática em contextos diplomáticos e de segurança.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">🎓 Formação Acadêmica</h2>
+            <div class="section-content">
+                <p><strong>Treinamento Avançado em Controle Mental e Empatia Estratégica</strong></p>
+                <p>Academia de Illusione, Ionia — 2020 🧠</p>
+                
+                <p><strong>Bacharelado em Psicologia Comportamental Aplicada à Espionagem</strong></p>
+                <p>Instituto Arcano de Piltover — 2022 📚</p>
+                
+                <p><strong>Certificação em Disfarce e Identidade Adaptativa (Programa "Vulpes Operandi")</strong></p>
+                <p>Ordem de Inteligência Oriental — 2023 🦊</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">💼 Experiência Profissional</h2>
+            <div class="section-content">
+                <p><strong>Agente de Campo Nível S</strong></p>
+                <p>Divisão de Inteligência Arcana — Operações Espectrais | 2020 – 2025</p>
+                <ul>
+                    <li>Executou mais de 80 infiltrações em zonas diplomáticas e corporações sigilosas 🕵️‍♀️</li>
+                    <li>Especialista em extração de memórias e neutralização emocional não letal 💫</li>
+                    <li>Desenvolveu técnicas de camuflagem empática e influência sensorial direta</li>
+                    <li>Operou sob até cinco identidades simultâneas com coerência narrativa completa 🎭</li>
+                </ul>
+                
+                <p><strong>Consultora Psíquica Independente</strong></p>
+                <p>Contratos Privados e Governamentais | 2020 – 2021</p>
+                <ul>
+                    <li>Treinou diplomatas e negociadores em leitura emocional e resistência mental 🧘</li>
+                    <li>Criou protocolos de defesa contra interrogatórios por hipnose reversa 🛡️</li>
+                    <li>Forneceu reabilitação psíquica a agentes afetados por manipulação mental</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">✨ Habilidades e Competências Especiais</h2>
+            <div class="skills-grid">
+                <div class="skill-item">🌀 Hipnose múltipla: induz transe em até cinco indivíduos simultaneamente</div>
+                <div class="skill-item">🌌 Ilusões sensoriais: cria realidades perceptivas com fidelidade > 98%</div>
+                <div class="skill-item">💖 Leitura empática profunda: identifica intenções e padrões subconscientes</div>
+                <div class="skill-item">🔋 Regeneração arcana: restaura energia vital e mental em até 12 horas</div>
+                <div class="skill-item">👁️ Charme vulpino: influência emocional amplificada por contato visual</div>
+                <div class="skill-item">🧠 Edição de memória parcial: apaga ou implanta lembranças breves sem dano físico</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">📊 Histórico Extraordinário</h2>
+            <div class="section-content">
+                <p><strong>Taxa de sucesso operacional:</strong> 100% ✅</p>
+                <p><strong>Tempo médio de persuasão:</strong> 43 segundos ⏱️</p>
+                <p><strong>Classificada como "Arma Psíquica de Classe A"</strong> pela Ordem Ioniana 🎖️</p>
+                <p><strong>Envolvida no Incidente da Cerimônia Dourada</strong>, resultando no desaparecimento de três agentes afetivamente comprometidos</p>
+            </div>
+        </div>
+        
+        <div class="warning-box">
+            <div class="warning-content">
+                <h3>⚠️ Aviso de Segurança</h3>
+                <p>O contato prolongado com a agente Ahri T'sai pode causar dependência emocional reversível, distorção de memória recente ou redução temporária de vigilância racional.</p>
+                <p><strong>Interações devem seguir o Protocolo Psíquico Nível 7 ou superior.</strong></p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">📎 Referências</h2>
+            <div class="section-content">
+                <p>Disponíveis mediante autorização do Conselho de Inteligência Arcana.</p>
+                <p><em>(Consulta sujeita a triagem mental prévia.)</em></p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Documento protegido por criptografia arcana nível 9 | Acesso registrado e monitorado</p>
+        </div>
+    </div>
+</body>
+</html>
